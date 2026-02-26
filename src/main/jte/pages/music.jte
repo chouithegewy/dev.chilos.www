@@ -1,15 +1,14 @@
 @template.layout.main(
-    title = "Poetry",
+    title = "Music",
     content = @`
 <div class="p-4 mb-4">
 
-  <h3>Poetry</h3>
+  <h3>Music</h3>
   <br />
-  <p>Here lie some poems...</p>
+  <p>yo!</p>
 
   <div class="py-4">
 
-    @template.pages.poems.roses_is_red()
 
   </div>
 
