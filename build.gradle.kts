@@ -38,3 +38,13 @@ jte {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks {
+    named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+        dependsOn("precompileJte")
+        from(fileTree("build/jte-classes") {
+            include("**/*.class")
+            include("**/*.bin")  // ← binary files
+        })
+    }
+}

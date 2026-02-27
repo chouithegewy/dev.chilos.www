@@ -38,7 +38,7 @@ class WwwApplicationTests {
 
         try {
             String res = fut.get();
-            assert (res.contains("home"));
+            assert (res.contains("I am David."));
         } catch (Exception e) {
             e.printStackTrace();
         }
