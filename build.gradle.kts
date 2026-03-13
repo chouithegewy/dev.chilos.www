@@ -25,6 +25,7 @@ dependencies {
 	implementation("gg.jte:jte-spring-boot-starter-3:3.1.16")
 	implementation("io.github.wimdeblauwe:htmx-spring-boot:5.0.0")
     implementation("gg.jte:jte-watcher:3.1.16")
+    implementation("org.springframework.boot:spring-boot-starter-websocket")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")

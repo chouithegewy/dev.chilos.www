@@ -14,7 +14,7 @@
 
     @template.components.navbar(title)
 
-    <main class="container bg-gray-800 w-md mx-auto my-4 p-4 rounded-lg">
+    <main class="container bg-gray-800 w-xs md:w-md mx-auto my-4 p-4 rounded-lg">
         ${content}
     </main>
 

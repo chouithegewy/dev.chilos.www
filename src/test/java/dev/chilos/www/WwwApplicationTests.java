@@ -7,12 +7,13 @@ import java.net.http.HttpResponse;
 import java.net.URI;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.lang.InterruptedException;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.boot.test.web.server.LocalServerPort;
-
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class WwwApplicationTests {
@@ -21,7 +22,7 @@ class WwwApplicationTests {
     private int port; // The randomly assigned port
 
     @Test
-    void indexPage() {
+    void indexPage() throws InterruptedException, ExecutionException {
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -36,12 +37,8 @@ class WwwApplicationTests {
                 .thenApply(HttpResponse::body)
                 .thenApply(String::toString);
 
-        try {
-            String res = fut.get();
-            assert (res.contains("I am David."));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String res = fut.get();
+        assert(res.contains("I am David."));
     }
 
 }
